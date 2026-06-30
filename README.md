@@ -1,4 +1,4 @@
-# NodeJS CI/CD Pipeline with Jenkins
+# NodeJS CI/CD Pipeline with Jenkins.
 
 This is a step-by-step walkthrough of building a complete CI/CD pipeline for a NodeJS application using Jenkins, Docker, and a Jenkins Shared Library. By the end, every push to GitHub automatically triggers tests, a version bump, a Docker build and push, and a commit back to the repo, all without touching Jenkins manually.
 
