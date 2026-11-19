@@ -485,3 +485,16 @@ To stop Jenkins from triggering a build on its own automatic version-bump commit
 2. **Jenkins** receives that trigger, runs the pipeline, builds the Docker image, and orchestrates everything.
 3. **DockerHub** stores the built image, versioned and ready to be pulled.
 4. **EC2** pulls the image from DockerHub, runs it as a container, and serves the actual website.
+
+
+## Local development
+
+```bash
+make install       # install dependencies
+make test          # run Jest tests
+make run           # start app on http://localhost:3000
+make docker-build  # build the Docker image locally
+make docker-run    # run the image locally
+```
+
+The app exposes `GET /health`, used by the Docker Compose healthcheck. Set `PORT` to change the listening port.
