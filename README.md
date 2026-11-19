@@ -498,3 +498,7 @@ make docker-run    # run the image locally
 ```
 
 The app exposes `GET /health`, used by the Docker Compose healthcheck. Set `PORT` to change the listening port.
+
+## Continuous integration
+
+Besides the Jenkins pipeline, `.github/workflows/ci.yml` runs the tests and a Docker build check on every push to `main` and on pull requests.
