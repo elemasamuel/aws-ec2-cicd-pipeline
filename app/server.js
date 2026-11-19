@@ -8,6 +8,11 @@ app.get('/', function (req, res) {
     res.sendFile(path.join(__dirname, "index.html"));
 });
 
+// Health endpoint used by Docker/compose healthchecks and monitoring
+app.get('/health', function (req, res) {
+  res.status(200).json({ status: 'ok' });
+});
+
 app.get('/profile-picture-andrea', function (req, res) {
   let img = fs.readFileSync(path.join(__dirname, "images/profile-andrea.jpg"));
   res.writeHead(200, {'Content-Type': 'image/jpg' });
