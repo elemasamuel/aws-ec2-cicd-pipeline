@@ -25,7 +25,13 @@ app.get('/profile-picture-ari', function (req, res) {
   res.end(img, 'binary');
 });
 
-app.listen(3000, function () {
-  console.log("app listening on port 3000!");
-});
+const PORT = process.env.PORT || 3000;
 
+// Only start listening when run directly, so tests can import the app
+if (require.main === module) {
+  app.listen(PORT, function () {
+    console.log("app listening on port " + PORT + "!");
+  });
+}
+
+module.exports = app;
